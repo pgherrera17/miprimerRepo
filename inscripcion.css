@@ -1,0 +1,79 @@
+body {
+    font-family: 'Arial', sans-serif; /* Establece la fuente de la página */
+    margin: 0; /* Elimina el margen por defecto del navegador */
+    padding: 0; /* Elimina el padding por defecto del navegador */
+    background-color: #e9ecef; /* Color de fondo de la página */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 100vh; /* Altura del viewport para centrar el contenido */
+    flex-direction: column; /* Alinea los divs verticalmente */
+}
+
+.formulario {
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+}
+
+h1,h2 {
+    
+    color: #333; /* Color del texto del encabezado */
+}
+
+.datos {
+    background: white; /* Color de fondo del contenedor del formulario */
+    padding: 30px; /* Espacio interno alrededor del contenido del formulario */
+    border-radius: 8px; /* Bordes redondeados del contenedor */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad al contenedor */
+    width: 750px; /* Ancho del contenedor del formulario */
+    margin: 0 20px; /* Margen horizontal para separar el contenedor de los bordes de la pantalla */
+}
+
+.recepcion-acto ,
+.datos_personales, 
+.preferencias_culinarias,
+ .gala, .orla
+{
+    background: white; /* Color de fondo del contenedor del formulario */
+    padding: 30px; /* Espacio interno alrededor del contenido del formulario */
+    border-radius: 8px; /* Bordes redondeados del contenedor */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad al contenedor */
+    width: 580px; /* Ancho del contenedor del formulario */
+    margin: 40px; /* Margen horizontal para separar el contenedor de los bordes de la pantalla */
+}
+
+
+
+label {
+    display: block; /* Mostrar etiquetas como bloques */
+    margin: 10px 0 5px; /* Espaciado alrededor de las etiquetas */
+}
+
+input, select, textarea {
+    width: 90%; /* Ancho completo para los campos */
+    padding: 10px; /* Espaciado interno de los campos */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados para los campos */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #5cb85c; /* Cambia el color del borde al enfocar el input */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+input[type="submit"] {
+    background-color: #5cb85c; /* Color de fondo del botón de envío */
+    color: white; /* Color del texto del botón de envío */
+    border: none; /* Sin borde para el botón */
+    padding: 12px; /* Espacio interno dentro del botón */
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente del botón */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c; /* Cambia el color de fondo al pasar el mouse sobre el botón A un verde más oscuro*/
+
+}

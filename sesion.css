@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif; /* Establece la fuente de la página */
+    margin: 0; /* Elimina el margen por defecto del navegador */
+    padding: 0; /* Elimina el padding por defecto del navegador */
+    background-color: #e9ecef; /* Color de fondo de la página */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    height: 100vh; /* Altura del viewport para centrar el contenido */
+    flex-direction: column; /* Alinea los divs verticalmente */
+}
+
+.header {
+    margin-bottom: 20px; /* Espacio entre el título y el formulario */
+}
+
+h1 {
+    text-align: center; /* Centra el texto del encabezado */
+    color: #333; /* Color del texto del encabezado */
+}
+
+.form-container {
+    background: white; /* Color de fondo del contenedor del formulario */
+    padding: 30px; /* Espacio interno alrededor del contenido del formulario */
+    border-radius: 8px; /* Bordes redondeados del contenedor */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad al contenedor */
+    width: 340px; /* Ancho del contenedor del formulario */
+    margin: 0 20px; /* Margen horizontal para separar el contenedor de los bordes de la pantalla */
+}
+
+label {
+    display: block; /* Hace que la etiqueta ocupe toda la línea */
+    margin: 15px 0 5px; /* Espacio alrededor de las etiquetas */
+    font-weight: bold; /* Hace que el texto de la etiqueta sea negrita */
+    color: #555; /* Color del texto de la etiqueta */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 90%; /* Hace que los inputs ocupen todo el ancho del contenedor */
+    padding: 12px; /* Espacio interno dentro de los inputs */
+    margin-bottom: 20px; /* Espacio debajo de los inputs */
+    border: 1px solid #ccc; /* Borde gris claro para los inputs */
+    border-radius: 4px; /* Bordes redondeados para los inputs */
+    transition: border-color 0.3s; /* Transición suave para el cambio de color del borde */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #5cb85c; /* Cambia el color del borde al enfocar el input */
+    outline: none; /* Elimina el contorno por defecto del navegador */
+}
+
+input[type="submit"] {
+    background-color: #5cb85c; /* Color de fondo del botón de envío */
+    color: white; /* Color del texto del botón de envío */
+    border: none; /* Sin borde para el botón */
+    padding: 12px; /* Espacio interno dentro del botón */
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 16px; /* Tamaño de la fuente del botón */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c; /* Cambia el color de fondo al pasar el mouse sobre el botón A un verde más oscuro*/
+}
