@@ -12,12 +12,14 @@
 </div>
 
 <div class="form-container"> <!-- Contenedor para el formulario de inicio de sesión -->
-    <form action="formulario_graduacion.html" method="post"> <!-- Formulario que se enviará a 'formulario_graduacion.html' usando el método POST -->
+    <form id="autenticar" onsubmit="return validateForm()" action="formulario_graduacion.html" method="post" > <!-- Formulario que se enviará a 'formulario_graduacion.html' usando el método POST -->
         <label for="login">Usuario:</label> <!-- Etiqueta para el campo de usuario -->
-        <input type="text" id="login" name="alumnograduacion_login" placeholder="usuarioAlumno" pattern="[A-Za-z]{4,15}" required> <!-- Campo de entrada para el nombre de usuario, con un patrón que permite solo letras y un rango de longitud -->
+        <input type="text" id="login" name="alumnograduacion_login" placeholder="usuarioAlumno" onblur="validateField('email')" pattern="[A-Za-z]{4,15}" required> <!-- Campo de entrada para el nombre de usuario, con un patrón que permite solo letras y un rango de longitud -->
+         <span id="emailError" class="error-message">El correo no es válido.</span>
 
         <label for="password">Contraseña:</label> <!-- Etiqueta para el campo de contraseña -->
-        <input type="password" id="password" name="alumnograduacion_password" placeholder="contraseñaAlumno" pattern="[A-Za-z\s]{8,100}" required> <!-- Campo de entrada para la contraseña, con un placeholder que indica el formato esperado y un patrón para la longitud -->
+        <input type="password" id="password" name="alumnograduacion_password" placeholder="contraseñaAlumno" onblur="validateField('pass')" pattern="[A-Za-z\s]{8,100}" required> <!-- Campo de entrada para la contraseña, con un placeholder que indica el formato esperado y un patrón para la longitud -->
+        <span id="passError" class="error-message">La contraseña no es válida.</span>
 
         <input type="submit" value="Iniciar Sesión"> <!-- Botón para enviar el formulario -->
     </form>
@@ -32,6 +34,57 @@
             this.value = input + '@alumno.uvigo.es'; // Añade la extensión al final del texto ingresado
         }
     });
+
+    function showError(fieldId, message) {
+            const errorSpan = document.getElementById(fieldId + 'Error');
+            errorSpan.textContent = message;
+            errorSpan.style.display = 'inline';
+        }
+
+        function hideError(fieldId) {
+            const errorSpan = document.getElementById(fieldId + 'Error');
+            errorSpan.style.display = 'none';
+        }
+
+        function validateField(fieldId) {
+            const field = document.getElementById(fieldId);
+            let isValid = true;
+
+            if (fieldId === 'email') {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(field.value)) {
+                    showError(fieldId, 'El correo no es válido.');
+                    field.classList.add('error');
+                    field.classList.remove('correct');
+                    isValid = false;
+                } else {
+                    hideError(fieldId);
+                    field.classList.add('correct');
+                    field.classList.remove('error');
+                }
+            } else if (fieldId === 'pass') {
+                if (field.value <= 0) {
+                    showError(fieldId, 'La contraseña debe tener entre 8 y 100 caracteres.');
+                    field.classList.add('error');
+                    field.classList.remove('correct');
+                    isValid = false;
+                } else {
+                    hideError(fieldId);
+                    field.classList.add('correct');
+                    field.classList.remove('error');
+                }
+            }
+
+            return isValid;
+        }
+
+
+    function validateForm() {
+            const emailValid = validateField('email');
+            const passValid = validateField('pass');
+
+            return emailValid && passValid;
+        }
 </script>
 
 </body>

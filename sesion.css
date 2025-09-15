@@ -28,6 +28,17 @@ h1 {
     margin: 0 20px; /* Margen horizontal para separar el contenedor de los bordes de la pantalla */
 }
 
+.error {
+            border: 2px solid red;
+        }
+        .correct {
+            border: 2px solid green;
+        }
+        .error-message {
+            color: red;
+            display: none;
+        }
+
 label {
     display: block; /* Hace que la etiqueta ocupe toda la línea */
     margin: 15px 0 5px; /* Espacio alrededor de las etiquetas */
